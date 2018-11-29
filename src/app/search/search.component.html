@@ -1,0 +1,16 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <label for="selection">Type</label>
+  <select name="selection" formControlName="selection">
+    <option value="''"></option>
+    <option value="films">Films</option>
+    <option value="people">People</option>
+    <option value="starships">Starships</option>
+  </select>
+  <input type="search" name="searchValue" formControlName="searchValue">
+  <button type="submit">Search</button>
+</form>
+<div *ngIf="searchResults">
+    <div *ngFor="let result of searchResults.results">
+        {{searchResults.results | json}}
+    </div>
+</div>
