@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
 
   onSubmit() {
     this.service.getResults(this.searchForm.value.selection, this.searchForm.value.searchValue).subscribe(data => {
-      this.searchResults = data;=
+      this.searchResults = data;
     });
   }
 
